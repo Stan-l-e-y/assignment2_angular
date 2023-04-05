@@ -8,6 +8,8 @@
           type="email"
           class="form-control w-full self-start px-3 py-1.5 text-base font-normal text-white border border-solid border-gray-700 rounded-lg transition ease-in-out m-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600 bg-inherit flex-1"
           placeholder="Enter email*"
+          name="email"
+          [(ngModel)]="email"
         />
       </div>
       <div class="mt-10 flex flex-col">
@@ -16,6 +18,8 @@
           type="password"
           class="form-control w-full self-start px-3 py-1.5 text-base font-normal text-white border border-solid border-gray-700 rounded-lg transition ease-in-out m-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600 bg-inherit flex-1"
           placeholder="Enter password*"
+          name="password"
+          [(ngModel)]="password"
         />
       </div>
       <div class="flex justify-between items-center mt-10">
