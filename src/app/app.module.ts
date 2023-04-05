@@ -5,10 +5,12 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
+import { EmployeelistComponent } from './components/employeelist/employeelist.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    EmployeelistComponent
   ],
   imports: [
     BrowserModule,
