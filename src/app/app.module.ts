@@ -7,20 +7,26 @@ import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeelistComponent } from './components/employeelist/employeelist.component';
 import { EmployeeComponent } from './components/employee/employee.component';
+import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
+import { FormsModule } from '@angular/forms';
+import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EmployeelistComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    AddEmployeeComponent,
+    UpdateEmployeeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     GraphQLModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

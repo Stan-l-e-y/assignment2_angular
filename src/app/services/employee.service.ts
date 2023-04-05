@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Employee } from '../Employee';
-import { Apollo, gql } from 'apollo-angular';
+import { Apollo, gql, MutationResult } from 'apollo-angular';
 import { Observable } from 'rxjs';
 import { ApolloQueryResult } from '@apollo/client';
 
@@ -43,5 +43,25 @@ export class EmployeeService {
       `,
       variables: { getEmployeeId: id },
     }).valueChanges;
+  }
+
+  addEmployee(employee: any): Observable<MutationResult<any>> {
+    return this.apollo.mutate({
+      mutation: gql`
+        mutation AddEmployee($addEmployeeInput: AddEmployeeInput) {
+          addEmployee(addEmployeeInput: $addEmployeeInput) {
+            id
+            first_name
+            last_name
+            email
+            gender
+            salary
+          }
+        }
+      `,
+      variables: {
+        addEmployeeInput: employee,
+      },
+    });
   }
 }
