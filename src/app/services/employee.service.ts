@@ -26,4 +26,22 @@ export class EmployeeService {
       `,
     }).valueChanges;
   }
+
+  getEmployee(id: string): Observable<ApolloQueryResult<any>> {
+    return this.apollo.watchQuery<any>({
+      query: gql`
+        query GetEmployee($getEmployeeId: String!) {
+          getEmployee(id: $getEmployeeId) {
+            id
+            first_name
+            last_name
+            email
+            gender
+            salary
+          }
+        }
+      `,
+      variables: { getEmployeeId: id },
+    }).valueChanges;
+  }
 }

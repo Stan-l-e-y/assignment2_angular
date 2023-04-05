@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeelistComponent } from './components/employeelist/employeelist.component';
+import { EmployeeComponent } from './components/employee/employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EmployeelistComponent
+    EmployeelistComponent,
+    EmployeeComponent
   ],
   imports: [
     BrowserModule,
