@@ -74,7 +74,7 @@ export class UpdateEmployeeComponent {
 
     this.employeeService.updateEmployee(this.id as string, emp).subscribe(
       ({ data }) => {
-        this.router.navigate([`/`]);
+        this.router.navigate([`/employees`]);
       },
       (error) => {
         alert(error);

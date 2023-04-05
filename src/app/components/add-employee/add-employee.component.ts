@@ -61,7 +61,7 @@ export class AddEmployeeComponent {
 
     this.employeeService.addEmployee(emp).subscribe(
       ({ data }) => {
-        this.router.navigate([`/`]);
+        this.router.navigate([`/employees`]);
       },
       (error) => {
         alert(error);
