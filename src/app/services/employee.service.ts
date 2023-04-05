@@ -64,4 +64,40 @@ export class EmployeeService {
       },
     });
   }
+
+  updateEmployee(
+    employeeId: string,
+    employee: any
+  ): Observable<MutationResult<any>> {
+    return this.apollo.mutate({
+      mutation: gql`
+        mutation UpdateEmployee(
+          $updateEmployeeId: String!
+          $updateInput: EmployeeUpdateInput
+        ) {
+          updateEmployee(id: $updateEmployeeId, updateInput: $updateInput) {
+            email
+            first_name
+          }
+        }
+      `,
+      variables: {
+        updateEmployeeId: employeeId,
+        updateInput: employee,
+      },
+    });
+  }
+
+  deleteEmployee(employeeId: string): Observable<MutationResult<any>> {
+    return this.apollo.mutate({
+      mutation: gql`
+        mutation DeleteEmpoyee($deleteEmpoyeeId: String!) {
+          deleteEmpoyee(id: $deleteEmpoyeeId)
+        }
+      `,
+      variables: {
+        deleteEmpoyeeId: employeeId,
+      },
+    });
+  }
 }

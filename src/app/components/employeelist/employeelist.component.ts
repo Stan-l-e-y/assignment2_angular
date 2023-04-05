@@ -16,13 +16,25 @@ export class EmployeelistComponent {
   ) {}
   ngOnInit(): void {
     this.employeeService.getEmployees().subscribe((employees) => {
-      console.log(employees.data.getAllEmployees);
       this.employees = employees.data.getAllEmployees;
     });
   }
 
   onView(employee: any) {
     // this.router.navigate([`employee/${employee.id}`]);
-    console.log(employee);
+  }
+
+  onDelete(employee: any) {
+    this.employeeService.deleteEmployee(employee.id).subscribe(
+      ({ data }) => {
+        this.employees = this.employees.filter(
+          (emp: any) => emp.id !== employee.id
+        );
+        alert('Successfully deleted!');
+      },
+      (error) => {
+        alert(error);
+      }
+    );
   }
 }

@@ -1,1 +1,66 @@
-<p>update-employee works!</p>
+<div class="flex flex-col h-screen justify-center items-center">
+  <h1 class="font-bold tracking-wider text-3xl">Add a new Employee</h1>
+  <form
+    class="mt-5 p-8 border-1 border rounded-lg flex flex-col w-72"
+    (ngSubmit)="onSubmit()"
+  >
+    <div class="flex flex-col">
+      <label for="first_name">First Name</label>
+      <input
+        type="text"
+        name="first_name"
+        [(ngModel)]="first_name"
+        class="border-1 border rounded-lg py-1 px-2 mt-2"
+      />
+    </div>
+    <div class="flex flex-col mt-4">
+      <label for="last_name">Last Name</label>
+      <input
+        type="text"
+        name="last_name"
+        [(ngModel)]="last_name"
+        class="border-1 border rounded-lg py-1 px-2 mt-2"
+      />
+    </div>
+    <div class="flex flex-col mt-4">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        email="true"
+        [(ngModel)]="email"
+        class="border-1 border rounded-lg py-1 px-2 mt-2"
+      />
+    </div>
+    <div class="flex flex-col mt-4">
+      <label for="gender" class="mb-2"> Gender </label>
+      <select
+        class="px-2 py-1 bg-inherit text-base font-normal border border-solid border-gray-700 rounded-lg transition ease-in-out focus:outline-none focus-visible:ring-2 focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-blue-600 text-white w-full"
+        name="gender"
+        [(ngModel)]="gender"
+      >
+        <option class="bg-black">Prefer not to say</option>
+        <option class="bg-black" value="MALE">Male</option>
+        <option class="bg-black" value="FEMALE">Female</option>
+        <option class="bg-black" value="OTHER">Other</option>
+      </select>
+    </div>
+    <div class="flex flex-col mt-4">
+      <label for="salary">Salary</label>
+      <input
+        type="number"
+        name="salary"
+        [(ngModel)]="salary"
+        class="border-1 border rounded-lg py-1 px-2 mt-2"
+      />
+    </div>
+    <div>
+      <button
+        class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mt-10"
+        type="submit"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+</div>
